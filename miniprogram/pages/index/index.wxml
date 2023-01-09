@@ -1,0 +1,82 @@
+<!--index.wxml-->
+<view class="containerA"bindtap="clickA"
+hover-class="hover_containerA"
+capture-bind:tap="captureclickA">container--A
+      <view class="containerB" bindtap="clickB" 
+      hover-class="hover_containerB"
+      hover-start-time="100"
+      hover-stay-time="1000"
+      hover-stop-propagation="true"
+      capture-bind:tap="captureclickB">container--B
+              <view class="containerC" bindtap="clickC" capture-catch:tap="captureclickC">container--C
+              </view>
+      </view>
+</view>
+<import src="student.wxml"></import>
+<template is="student"></template>
+<include src="person.wxml"/>
+<template is="person"></template>
+
+<wxs module="m1">
+  module.exports = {
+    message: 'wxs z中的数据'
+  }
+</wxs>
+<view bindtap="clickMe">{{m1.message}}</view>
+<wxs src='./m2.wxs' module="m2"></wxs>
+<view>{{m2.message}}</view>
+<wxs module="m3">
+var v = 1;
+module.exports.value = v;
+// 单行注释
+v += 1
+/* 多行注释
+v += 1；
+*/
+console.log("log 打印 "+v);
+/*
+var d = 3;
+console.log(v);
+</wxs>
+<view>{{m3.value}}</view>
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库</view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text data-name="{{theName}}"></text>
+    </block>
+  </view>
+  <!-- 列表 -->
+  <view>
+    <block wx:for="{{items}}" wx:for-item="item" wx:key="index">
+      <view>{{index}}:{{item.name}}</view>
+    </block>
+  </view>
+  <view>今天吃什么呢？</view>
+  <view wx:if="{{condition ==1}}">饺子</view>
+  <view wx:elif="{{condition ==2}}">馍馍</view>
+  <view wx:else>米饭</view>
+  <template name="tempItem">
+    <view>
+      <view>收件人： {{name}}</view>
+      <view>联系方式： {{phone}}</view>
+      <view>地址： {{address}}</view>
+    </view>
+  </template>
+  <template is="tempItem" data="{{...item}}"></template>
+  <view class="usermotto" hidden="{{flag?true:false}}">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>

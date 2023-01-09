@@ -1,0 +1,5 @@
+/**assest.wxss**/
+.containerview{
+  border: 1px solid #000;
+  color:green
+}

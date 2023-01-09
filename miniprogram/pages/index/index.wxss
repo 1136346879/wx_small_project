@@ -1,0 +1,63 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 20px;
+  color: rgb(231, 15, 15);
+  background-color: aqua;
+  width: 100%;
+  height: 200rpx;
+  text-align: center;
+  visibility: visible;
+  padding-top:  20rpx;
+  justify-content: center;
+  display: flex;
+}
+
+.user-motto{
+  margin-top: 50rpx;
+}
+@import './assest.wxss';
+.containerview{
+  color:red
+}
+.containerA{
+  width: 500;
+  border: 1px solid red;
+  background-color: rosybrown;
+}
+.hover_containerA{
+  width: 500;
+  background-color: purple;
+}
+.containerB{
+  width: 300;
+  border: 1px solid #000;
+  margin: 20rpx;
+  background-color: green;
+}
+.hover_containerB{
+  width: 300;
+  border: 1px solid #000;
+  margin: 20rpx;
+  background-color: greenyellow;
+}
+.containerC{
+  width: 100;
+  border: 1px solid blue;
+  margin: 20rpx;
+  background-color: yellow;
+}

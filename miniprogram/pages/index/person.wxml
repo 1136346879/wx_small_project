@@ -1,0 +1,9 @@
+<template name="person">
+<view>this is person.wxml</view>
+</template>
+<view class="containerview" >
+您好，我是person view
+</view>
+<view style="width: auto;background-color: {{colorValue}};" >
+您好，我是style person view
+</view>
