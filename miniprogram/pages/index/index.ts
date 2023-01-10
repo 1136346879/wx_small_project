@@ -1,9 +1,10 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>()
-
+const order = ['demo1', 'demo2', 'demo3']
 Page({
   data: {
+    toView: 'green',
     motto: 'Hello World...',
     theName: 'Jack',
     flag: false,
@@ -29,6 +30,11 @@ Page({
   bindViewTap() {
     wx.navigateTo({
       url: '../logs/logs',
+    })
+  },
+  toRefreshPage() {
+    wx.navigateTo({
+      url: '../scrollview/index',
     })
   },
   onLoad() {
@@ -81,5 +87,61 @@ console.log('captureclickC container C');
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+onShareAppMessage() {
+  return {
+    title: 'scroll-view',
+    path: 'page/component/pages/scroll-view/scroll-view'
   }
-})
+},
+upper(e) {
+  console.log(e)
+},
+
+lower(e) {
+  console.log(e)
+},
+
+scroll(e) {
+  console.log(e)
+},
+
+scrollToTop() {
+  this.setAction({
+    scrollTop: 0
+  })
+},
+
+tap() {
+  for (let i = 0; i < order.length; ++i) {
+    if (order[i] === this.data.toView) {
+      this.setData({
+        toView: order[i + 1],
+        scrollTop: (i + 1) * 200
+      })
+      break
+    }
+  }
+},
+
+tapMove() {
+  this.setData({
+    scrollTop: this.data.scrollTop + 10
+  })
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+)
