@@ -1,9 +1,11 @@
 // index.ts
 // 获取应用实例
 const app = getApp<IAppOption>()
-
+const order = ['green', 'blue', 'red']
 Page({
   data: {
+    topView: 'green',
+    scrollTop: 0,
     motto: 'Hello World...',
     theName: 'Jack',
     flag: false,
@@ -31,6 +33,31 @@ Page({
       url: '../logs/logs',
     })
   },
+  toRefreshPage() {
+    wx.navigateTo({
+      url: '../scrollview/index',
+    })
+  },
+  toButtonPage() {
+    wx.navigateTo({
+      url: '../button/button',
+    })
+  },
+  tocheckboxPage() {
+    wx.navigateTo({
+      url: '../checkbox/checkbox',
+    })
+  },
+  toFormPage() {
+    wx.navigateTo({
+      url: '../form/form',
+    })
+  },
+  toInputPage() {
+    wx.navigateTo({
+      url: '../input/input',
+    })
+  },
   onLoad() {
     // @ts-ignore
     if (wx.getUserProfile) {
@@ -44,12 +71,15 @@ Page({
   },
   clickA(){
     console.log('click container A');
+    this.toButtonPage();
 },
 clickB(){
   console.log('click container B');
+  this.tocheckboxPage();
 },
 clickC(){
   console.log('click container C');
+ 
 },
 
 captureclickA(){
@@ -60,6 +90,8 @@ console.log('captureclickB container B');
 },
 captureclickC(){
 console.log('captureclickC container C');
+// this.toFormPage();
+this.toInputPage();
 },
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -81,5 +113,61 @@ console.log('captureclickC container C');
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: 'scroll-view',
+      path: 'page/component/pages/scroll-view/scroll-view'
+    }
+  },
+  upper(e) {
+    console.log(e)
+  },
+
+  lower(e) {
+    console.log(e)
+  },
+
+  scroll(e) {
+    console.log(e)
+  },
+
+  scrollToTop() {
+    this.setAction({
+      scrollTop: 0
+    })
+  },
+
+  tap() {
+    for (let i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.topView) {
+        this.setData({
+          topView: order[i + 1],
+          scrollTop: (i + 1) * 40
+        })
+        break
+      }
+    }
+  },
+
+  tapMove() {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
   }
-})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+)

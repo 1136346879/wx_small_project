@@ -1,4 +1,34 @@
 <!--index.wxml-->
+      <view class="page-section-title" bindtap='toRefreshPage' >
+        <text>Vertical Scroll\n纵向滚动</text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view scroll-y style="height: 100rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}"
+        enable-back-to-top="true"
+        scroll-with-animation="true"
+        
+        >
+          <view id="green" class="scroll-view-item demo-text-1"></view>
+          <view id="blue"  class="scroll-view-item demo-text-2"></view>
+          <view id="red" class="scroll-view-item demo-text-3"></view>
+        </scroll-view>
+      </view>
+<view>
+  <button size="mini" bindtap="tap" >click me to scroll into view</button>
+  <button size="mini" bindtap="tapMove" >click me to scroll</button>
+</view>
+
+
+      <view class="page-section-title">
+        <text>Horizontal Scroll\n横向滚动</text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-x bindscroll="scroll" style="width: 100%">
+          <view id="green" class="scroll-view-item_H demo-text-1"></view>
+          <view id="blue"  class="scroll-view-item_H demo-text-2"></view>
+          <view id="red" class="scroll-view-item_H demo-text-3"></view>
+        </scroll-view>
+      </view>
 <view class="containerA"bindtap="clickA"
 hover-class="hover_containerA"
 capture-bind:tap="captureclickA">container--A
@@ -33,10 +63,10 @@ capture-bind:tap="captureclickA">container--A
         </view>
       </view>
 
-<import src="student.wxml"></import>
+<!-- <import src="student.wxml"></import>
 <template is="student"></template>
 <include src="person.wxml"/>
-<template is="person"></template>
+<template is="person"></template> -->
 
 <wxs module="m1">
   module.exports = {
@@ -58,6 +88,7 @@ console.log("log 打印 "+v);
 /*
 var d = 3;
 console.log(v);
+*/
 </wxs>
 <view>{{m3.value}}</view>
 <view class="container">

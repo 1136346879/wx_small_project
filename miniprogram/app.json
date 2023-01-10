@@ -1,7 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/scrollview/index",
+    "pages/button/button",
+    "pages/form/form",
+    "pages/input/input",
+    "pages/checkbox/checkbox"
   ],
   "window": {
     "backgroundTextStyle": "light",
