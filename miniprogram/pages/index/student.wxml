@@ -1,5 +1,5 @@
 <import src="teacher.wxml"></import>
 <template is="teacher"></template>
 <template name="student">
-this is student.wxml
+this is   student.wxml
 </template>

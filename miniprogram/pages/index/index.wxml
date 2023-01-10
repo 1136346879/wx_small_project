@@ -12,6 +12,27 @@ capture-bind:tap="captureclickA">container--A
               </view>
       </view>
 </view>
+<view class="page-section-title">
+        <text>flex-direction: row\n横向布局</text>
+      </view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="demo-text-1">A</view>
+          <view class="demo-text-2">B</view>
+          <view class="demo-text-3">C</view>
+        </view>
+      </view>
+      <view class="page-section-title">
+        <text>flex-direction: column\n纵向布局</text>
+      </view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:column;">
+          <view class="demo-text-1">A</view>
+          <view class="demo-text-2">B</view>
+          <view class="demo-text-3">C</view>
+        </view>
+      </view>
+
 <import src="student.wxml"></import>
 <template is="student"></template>
 <include src="person.wxml"/>
