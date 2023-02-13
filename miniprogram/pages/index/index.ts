@@ -33,6 +33,17 @@ Page({
       url: '../logs/logs',
     })
   },
+  toPickerPage() {
+    wx.navigateTo({
+      url: '../pickerdemo/picker',
+    })
+  },
+  toPickerViewPage() {
+    wx.navigateTo({
+      url: '../pickerview/pickerview',
+    })
+  },
+  
   toRefreshPage() {
     wx.navigateTo({
       url: '../scrollview/index',

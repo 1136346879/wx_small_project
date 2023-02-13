@@ -6,6 +6,8 @@
     "pages/button/button",
     "pages/form/form",
     "pages/input/input",
+    "pages/pickerdemo/picker",
+    "pages/pickerview/pickerview",
     "pages/checkbox/checkbox"
   ],
   "window": {

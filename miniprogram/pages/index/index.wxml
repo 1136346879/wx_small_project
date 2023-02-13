@@ -1,4 +1,10 @@
 <!--index.wxml-->
+<view class="page-section-title" bindtap='toPickerViewPage' >
+        <text>pickerview</text>
+      </view>
+<view class="page-section-title" bindtap='toPickerPage' >
+        <text>pickerdemo</text>
+      </view>
       <view class="page-section-title" bindtap='toRefreshPage' >
         <text>Vertical Scroll\n纵向滚动</text>
       </view>
