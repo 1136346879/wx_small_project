@@ -17,5 +17,29 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#FF7D22",
+    "color": "#BBBBBB",
+    "list": [
+        {
+            "text": "首页",
+            "pagePath": "pages/index/index",
+            "selectedIconPath": "pages/lib/icon-home-selected.png",
+            "iconPath": "pages/lib/icon-home-unselected.png"
+        },
+        {
+            "text": "消息",
+            "pagePath":  "pages/input/input",
+            "selectedIconPath": "pages/lib/icon-message-selected.png",
+            "iconPath": "pages/lib/icon-msg-unselected.png"
+        },
+        {
+            "text": "我的",
+            "pagePath":  "pages/pickerdemo/picker",
+            "selectedIconPath": "pages/lib/icon-user-selected.png",
+            "iconPath": "pages/lib/icon-user-unselected.png"
+        }
+    ]
+}
 }
